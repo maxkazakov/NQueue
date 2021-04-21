@@ -1,5 +1,13 @@
 import Foundation
 
+public protocol Mutexing {
+    @discardableResult
+    func sync<R>(execute work: () throws -> R) rethrows -> R
+
+    @discardableResult
+    func trySync<R>(execute work: () throws -> R) rethrows -> R
+}
+
 public enum Mutex {
     public enum PThreadKind {
         case normal
@@ -8,13 +16,29 @@ public enum Mutex {
         public static let `default`: Self = .normal
     }
 
-    case unfair
-    case nslock
-    case pthread(PThreadKind)
-    case semaphore
-    case barrier(Queueable)
+    public static var unfair: Mutexing {
+        return Impl.Unfair()
+    }
 
-    public static let `default`: Self = .unfair
+    public static var nslock: Mutexing {
+        return Impl.NSLock()
+    }
+
+    public static func pthread(_ type: PThreadKind = .normal) -> Mutexing {
+        return Impl.PThread(type: type)
+    }
+
+    public static var semaphore: Mutexing {
+        return Impl.Semaphore()
+    }
+
+    public static func barrier(_ queue: Queueable = Queue.utility) -> Mutexing {
+        return Impl.Barrier(queue)
+    }
+
+    public static var `default`: Mutexing {
+        return Self.unfair
+    }
 }
 
 public enum AtomicOption: Equatable {
@@ -25,7 +49,7 @@ public enum AtomicOption: Equatable {
 
 @propertyWrapper
 public class Atomic<Value> {
-    private let mutex: AtomicLock
+    private let mutex: Mutexing
     private var value: Value
     private let read: AtomicOption
     private let write: AtomicOption
@@ -67,25 +91,13 @@ public class Atomic<Value> {
     }
 
     public init(wrappedValue initialValue: Value,
-                mutex: Mutex = .default,
+                mutex: Mutexing = Mutex.default,
                 read: AtomicOption = .async,
                 write: AtomicOption = .trySync) {
         self.value = initialValue
+        self.mutex = mutex
         self.read = read
         self.write = write
-
-        switch mutex {
-        case .nslock:
-            self.mutex = Impl.NSLock()
-        case .pthread(let kind):
-            self.mutex = Impl.PThread(type: kind)
-        case .barrier(let q):
-            self.mutex = Impl.Barrier(q)
-        case .unfair:
-            self.mutex = Impl.Unfair()
-        case .semaphore:
-            self.mutex = Impl.Semaphore()
-        }
     }
 
     public func mutate(_ mutation: (inout Value) -> Void) {
@@ -114,7 +126,7 @@ public class Atomic<Value> {
 }
 
 extension Atomic where Value: ExpressibleByNilLiteral {
-    public convenience init(mutex: Mutex = .default,
+    public convenience init(mutex: Mutexing = Mutex.default,
                             read: AtomicOption = .async,
                             write: AtomicOption = .async) {
         self.init(wrappedValue: nil,
@@ -124,21 +136,13 @@ extension Atomic where Value: ExpressibleByNilLiteral {
     }
 }
 
-private protocol AtomicLock {
-    @discardableResult
-    func sync<R>(execute work: () throws -> R) rethrows -> R
-
-    @discardableResult
-    func trySync<R>(execute work: () throws -> R) rethrows -> R
-}
-
-private protocol SimpleLock: AtomicLock {
+private protocol SimpleMutexing: Mutexing {
     func lock()
     func tryLock() -> Bool
     func unlock()
 }
 
-private extension SimpleLock {
+private extension SimpleMutexing {
     @discardableResult
     func sync<R>(execute work: () throws -> R) rethrows -> R {
         lock()
@@ -161,7 +165,7 @@ private extension SimpleLock {
 }
 
 private enum Impl {
-    final class Unfair: SimpleLock {
+    final class Unfair: SimpleMutexing {
         private var _lock = os_unfair_lock()
 
         func lock() {
@@ -177,7 +181,7 @@ private enum Impl {
         }
     }
 
-    struct NSLock: SimpleLock {
+    struct NSLock: SimpleMutexing {
         private let _lock = Foundation.NSLock()
 
         func lock() {
@@ -193,7 +197,7 @@ private enum Impl {
         }
     }
 
-    final class PThread: SimpleLock {
+    final class PThread: SimpleMutexing {
         private var _lock: pthread_mutex_t = .init()
 
         public init(type: Mutex.PThreadKind = .default) {
@@ -234,7 +238,7 @@ private enum Impl {
         }
     }
 
-    struct Semaphore: AtomicLock {
+    struct Semaphore: Mutexing {
         private var _lock = DispatchSemaphore(value: 1)
 
         func sync<R>(execute work: () throws -> R) rethrows -> R {
@@ -254,7 +258,7 @@ private enum Impl {
         }
     }
 
-    struct Barrier: AtomicLock {
+    struct Barrier: Mutexing {
         private let queue: Queueable
 
         init(_ queue: Queueable) {

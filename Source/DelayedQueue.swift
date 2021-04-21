@@ -9,7 +9,7 @@ public enum DelayedQueue {
     case asyncAfterWithFlags(deadline: DispatchTime, flags: Queue.Flags, queue: Queueable)
 }
 
-extension DelayedQueue {
+public extension DelayedQueue {
     func fire(_ workItem: @escaping () -> Void) {
         switch self {
         case .absent:

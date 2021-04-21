@@ -25,7 +25,7 @@ public struct Queue: Equatable {
     }
 
     public static var `default`: Queueable {
-        return Queue(sdk: .global(qos: .`default`))
+        return Queue(sdk: .global(qos: .default))
     }
 
     public static var userInitiated: Queueable {
