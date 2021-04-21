@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol Queueable {
+public protocol Queueable: class {
     func async(execute workItem: @escaping () -> Void)
 
     func asyncAfter(deadline: DispatchTime,

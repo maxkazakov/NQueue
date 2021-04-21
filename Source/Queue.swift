@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Queue: Equatable {
+public final class Queue {
     public enum Attributes: Equatable {
         case concurrent
         case serial
