@@ -15,8 +15,6 @@ Pod::Spec.new do |spec|
 
     spec.frameworks = 'XCTest', 'Foundation', 'UIKit'
 
-    spec.default_subspec = 'Core'
-
     spec.dependency 'Nimble'
     spec.dependency 'Spry'
     spec.dependency 'Quick'
