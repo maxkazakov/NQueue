@@ -9,7 +9,7 @@ public protocol Mutexing {
 }
 
 public enum Mutex {
-    public enum PThreadKind {
+    public enum Kind {
         case normal
         case recursive
 
@@ -20,12 +20,12 @@ public enum Mutex {
         return Impl.Unfair()
     }
 
-    public static var nslock: Mutexing {
-        return Impl.NSLock()
+    public static func nslock(_ kind: Kind = .normal) -> Mutexing {
+        return Impl.NSLock(kind: kind)
     }
 
-    public static func pthread(_ type: PThreadKind = .normal) -> Mutexing {
-        return Impl.PThread(type: type)
+    public static func pthread(_ kind: Kind = .normal) -> Mutexing {
+        return Impl.PThread(kind: kind)
     }
 
     public static var semaphore: Mutexing {
@@ -136,10 +136,13 @@ extension Atomic where Value: ExpressibleByNilLiteral {
     }
 }
 
-private protocol SimpleMutexing: Mutexing {
+private protocol Locking {
     func lock()
     func tryLock() -> Bool
     func unlock()
+}
+
+private protocol SimpleMutexing: Mutexing, Locking {
 }
 
 private extension SimpleMutexing {
@@ -164,6 +167,18 @@ private extension SimpleMutexing {
     }
 }
 
+extension NSLock: Locking {
+    func tryLock() -> Bool {
+        return self.try()
+    }
+}
+
+extension NSRecursiveLock: Locking {
+    func tryLock() -> Bool {
+        return self.try()
+    }
+}
+
 private enum Impl {
     final class Unfair: SimpleMutexing {
         private var _lock = os_unfair_lock()
@@ -182,14 +197,23 @@ private enum Impl {
     }
 
     struct NSLock: SimpleMutexing {
-        private let _lock = Foundation.NSLock()
+        private let _lock: Locking
+
+        public init(kind: Mutex.Kind) {
+            switch kind {
+            case .normal:
+                _lock = Foundation.NSLock()
+            case .recursive:
+                _lock = Foundation.NSRecursiveLock()
+            }
+        }
 
         func lock() {
             _lock.lock()
         }
 
         func tryLock() -> Bool {
-            return _lock.try()
+            return _lock.tryLock()
         }
 
         func unlock() {
@@ -200,14 +224,14 @@ private enum Impl {
     final class PThread: SimpleMutexing {
         private var _lock: pthread_mutex_t = .init()
 
-        public init(type: Mutex.PThreadKind = .default) {
+        public init(kind: Mutex.Kind) {
             var attr = pthread_mutexattr_t()
 
             guard pthread_mutexattr_init(&attr) == 0 else {
                 preconditionFailure()
             }
 
-            switch type {
+            switch kind {
             case .normal:
                 pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_NORMAL)
             case .recursive:
