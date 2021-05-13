@@ -37,7 +37,7 @@ public enum Mutex {
     }
 
     public static var `default`: Mutexing {
-        return Self.unfair
+        return Self.pthread(.recursive)
     }
 }
 
@@ -92,8 +92,8 @@ public class Atomic<Value> {
 
     public init(wrappedValue initialValue: Value,
                 mutex: Mutexing = Mutex.default,
-                read: AtomicOption = .async,
-                write: AtomicOption = .trySync) {
+                read: AtomicOption = .sync,
+                write: AtomicOption = .sync) {
         self.value = initialValue
         self.mutex = mutex
         self.read = read
@@ -127,8 +127,8 @@ public class Atomic<Value> {
 
 extension Atomic where Value: ExpressibleByNilLiteral {
     public convenience init(mutex: Mutexing = Mutex.default,
-                            read: AtomicOption = .async,
-                            write: AtomicOption = .async) {
+                            read: AtomicOption = .sync,
+                            write: AtomicOption = .sync) {
         self.init(wrappedValue: nil,
                   mutex: mutex,
                   read: read,
