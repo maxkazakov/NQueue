@@ -1,7 +1,7 @@
 import Foundation
-import Spry
+import NSpry
 
-@testable import NQueue
+import NQueue
 
 extension Queue: SpryEquatable {
 }

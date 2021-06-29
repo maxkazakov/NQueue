@@ -24,8 +24,17 @@
         "repositoryURL": "https://github.com/Quick/Nimble.git",
         "state": {
           "branch": null,
-          "revision": "e491a6731307bb23783bf664d003be9b2fa59ab5",
-          "version": "9.0.0"
+          "revision": "af1730dde4e6c0d45bf01b99f8a41713ce536790",
+          "version": "9.2.0"
+        }
+      },
+      {
+        "package": "NSpry",
+        "repositoryURL": "https://github.com/NikSativa/NSpry.git",
+        "state": {
+          "branch": null,
+          "revision": "9149ea0a0f6f2e3853fc043ca78f9ba976cec232",
+          "version": "1.0.1"
         }
       },
       {
@@ -33,17 +42,8 @@
         "repositoryURL": "https://github.com/Quick/Quick.git",
         "state": {
           "branch": null,
-          "revision": "8cce6acd38f965f5baa3167b939f86500314022b",
-          "version": "3.1.2"
-        }
-      },
-      {
-        "package": "Spry",
-        "repositoryURL": "https://github.com/NikSativa/Spry.git",
-        "state": {
-          "branch": null,
-          "revision": "c8a2894b3e1f97b3b9a7d726a05320673b864337",
-          "version": "3.4.3"
+          "revision": "bd86ca0141e3cfb333546de5a11ede63f0c4a0e6",
+          "version": "4.0.0"
         }
       }
     ]

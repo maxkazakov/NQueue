@@ -12,9 +12,9 @@ let package = Package(
         .library(name: "NQueueTestHelpers", targets: ["NQueueTestHelpers"])
     ],
     dependencies: [
-        .package(url: "https://github.com/NikSativa/Spry.git", .upToNextMajor(from: "3.4.3")),
-        .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "3.1.2")),
-        .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "9.0.0"))
+        .package(url: "https://github.com/NikSativa/NSpry.git", .upToNextMajor(from: "1.0.1")),
+        .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "4.0.0")),
+        .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "9.2.0"))
     ],
     targets: [
         .target(name: "NQueue",
@@ -23,20 +23,18 @@ let package = Package(
         .target(name: "NQueueTestHelpers",
                 dependencies: [
                     "NQueue",
-                    "Nimble",
-                    "Spry"
+                    "NSpry"
                 ],
                 path: "TestHelpers"),
         .testTarget(name: "NQueueTests",
                     dependencies: [
                         "NQueue",
                         "NQueueTestHelpers",
-                        "Spry",
+                        "NSpry",
                         "Nimble",
                         "Quick",
-                        .product(name: "Spry_Nimble", package: "Spry")
                     ],
-                    path: "Tests/Specs"
+                    path: "Tests"
         )
     ],
     swiftLanguageVersions: [.v5]

@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name         = "NQueue"
-    spec.version      = "1.0.0"
+    spec.version      = "1.1.0"
     spec.summary      = "Queue wrapper of DispatchQueue"
 
     spec.source       = { :git => "git@github.com:NikSativa/NQueue.git" }
@@ -15,6 +15,5 @@ Pod::Spec.new do |spec|
 
     spec.frameworks = 'Foundation', 'UIKit'
 
-    spec.resources = ['Source/**/*.{storyboard,xib,xcassets,json,imageset,png,strings,stringsdict}']
-    spec.source_files  = 'Source/**/*.swift'
+    spec.source_files  = 'Source/**/*.{swift,storyboard,xib}'
 end

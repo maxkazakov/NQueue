@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name         = "NQueueTestHelpers"
-    spec.version      = "1.0.0"
+    spec.version      = "1.1.0"
     spec.summary      = "Queue wrapper of DispatchQueue"
 
     spec.source       = { :git => "git@github.com:NikSativa/NQueue.git" }
@@ -15,23 +15,21 @@ Pod::Spec.new do |spec|
 
     spec.frameworks = 'XCTest', 'Foundation', 'UIKit'
 
-    spec.dependency 'Nimble'
-    spec.dependency 'Spry'
-    spec.dependency 'Quick'
-    spec.dependency 'Spry+Nimble'
-
     spec.scheme = {
       :code_coverage => true
     }
 
-    spec.resources = ['TestHelpers/**/Test/**/*.{xcassets,json,imageset,png,strings,stringsdict}']
-    spec.source_files = 'TestHelpers/**/Test*.{storyboard,xib,swift}',
-                      'TestHelpers/**/Fake*.*',
-                      'TestHelpers/**/*+TestHelper.*'
+    spec.source_files = 'TestHelpers/**/*.{storyboard,xib,swift}'
 
     spec.dependency 'NQueue'
+    spec.dependency 'NSpry'
+
     spec.test_spec 'Tests' do |tests|
         #        tests.requires_app_host = true
-        tests.source_files = 'Tests/Specs/**/*Spec.swift'
+        tests.dependency 'Quick'
+        tests.dependency 'Nimble'
+        tests.dependency 'NQueue'
+
+        tests.source_files = 'Tests/**/*.*'
     end
 end
