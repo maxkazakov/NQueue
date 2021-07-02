@@ -15,5 +15,5 @@ Pod::Spec.new do |spec|
 
     spec.frameworks = 'Foundation', 'UIKit'
 
-    spec.source_files  = 'Source/**/*.{swift,storyboard,xib}'
+    spec.source_files = 'Source/**/*.{swift,storyboard,xib}'
 end
