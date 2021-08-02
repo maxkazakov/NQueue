@@ -3,8 +3,7 @@ import NSpry
 
 import NQueue
 
-final
-class FakeQueueable: Queueable, Spryable {
+final class FakeQueueable: Queueable, Spryable {
     enum ClassFunction: String, StringRepresentable {
         case empty
     }

@@ -3,8 +3,7 @@ import NSpry
 
 import NQueue
 
-final
-class FakeMutexing: Mutexing, Spryable {
+final class FakeMutexing: Mutexing, Spryable {
     enum ClassFunction: String, StringRepresentable {
         case empty
     }
