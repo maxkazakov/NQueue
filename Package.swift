@@ -8,7 +8,7 @@ let package = Package(
         .iOS(.v10)
     ],
     products: [
-        .library(name: "NQueue", targets: ["NQueue"]),
+        .library(name: "NQueue", type: .dynamic, targets: ["NQueue"]),
         .library(name: "NQueueTestHelpers", targets: ["NQueueTestHelpers"])
     ],
     dependencies: [
