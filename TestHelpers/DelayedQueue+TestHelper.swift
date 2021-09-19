@@ -4,12 +4,12 @@ import NSpry
 import NQueue
 
 extension DelayedQueue: Equatable, SpryEquatable {
-    public static func == (lhs: DelayedQueue, rhs: DelayedQueue) -> Bool {
+    public static func ==(lhs: DelayedQueue, rhs: DelayedQueue) -> Bool {
         switch (lhs, rhs) {
         case (.absent, .absent):
             return true
-        case (.sync(let a), .sync(let b)),
-             (.async(let a), .async(let b)):
+        case (.async(let a), .async(let b)),
+             (.sync(let a), .sync(let b)):
             return compare(a, b)
         case (.asyncAfter(let a1, let a2), .asyncAfter(let b1, let b2)):
             return a1 == b1 && compare(a2, b2)
@@ -17,10 +17,10 @@ extension DelayedQueue: Equatable, SpryEquatable {
             return a1 == b1 && a2 == b2 && compare(a3, b3)
 
         case (.absent, _),
-             (.sync, _),
              (.async, _),
              (.asyncAfter, _),
-             (.asyncAfterWithFlags, _):
+             (.asyncAfterWithFlags, _),
+             (.sync, _):
             return false
         }
     }

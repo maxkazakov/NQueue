@@ -1,7 +1,7 @@
 import Foundation
-import Quick
 import Nimble
 import NSpry
+import Quick
 
 import NQueue
 import NQueueTestHelpers
@@ -21,7 +21,7 @@ class QueueSpec: QuickSpec {
 
             describe("async") {
                 var didCall = false
-                
+
                 beforeEach {
                     subject.async {
                         didCall = true

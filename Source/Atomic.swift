@@ -125,10 +125,10 @@ public class Atomic<Value> {
     }
 }
 
-extension Atomic where Value: ExpressibleByNilLiteral {
-    public convenience init(mutex: Mutexing = Mutex.default,
-                            read: AtomicOption = .sync,
-                            write: AtomicOption = .sync) {
+public extension Atomic where Value: ExpressibleByNilLiteral {
+    convenience init(mutex: Mutexing = Mutex.default,
+                     read: AtomicOption = .sync,
+                     write: AtomicOption = .sync) {
         self.init(wrappedValue: nil,
                   mutex: mutex,
                   read: read,
