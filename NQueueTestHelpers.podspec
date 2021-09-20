@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
     spec.author           = { "Nikita Konopelko" => "nik.sativa@gmail.com" }
     spec.social_media_url = "https://www.facebook.com/Nik.Sativa"
 
-    spec.ios.deployment_target = "10.0"
+    spec.ios.deployment_target = "12.0"
     spec.swift_version = '5.0'
 
     spec.frameworks = 'XCTest', 'Foundation', 'UIKit'
@@ -28,6 +28,7 @@ Pod::Spec.new do |spec|
         #        tests.requires_app_host = true
         tests.dependency 'Quick'
         tests.dependency 'Nimble'
+        tests.dependency 'NSpry_Nimble'
         tests.dependency 'NQueue'
 
         tests.source_files = 'Tests/**/*.*'

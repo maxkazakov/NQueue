@@ -2,6 +2,7 @@ import Foundation
 
 import Nimble
 import NSpry
+import NSpry_Nimble
 import Quick
 
 @testable import NQueue
