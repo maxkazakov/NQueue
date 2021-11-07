@@ -48,7 +48,7 @@ public enum AtomicOption: Equatable {
 }
 
 @propertyWrapper
-public class Atomic<Value> {
+public final class Atomic<Value> {
     private let mutex: Mutexing
     private var value: Value
     private let read: AtomicOption

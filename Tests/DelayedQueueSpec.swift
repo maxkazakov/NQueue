@@ -8,7 +8,7 @@ import Quick
 @testable import NQueue
 @testable import NQueueTestHelpers
 
-class DelayedQueueSpec: QuickSpec {
+final class DelayedQueueSpec: QuickSpec {
     override func spec() {
         describe("DelayedQueue") {
             var subject: DelayedQueue!

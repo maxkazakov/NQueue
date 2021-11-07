@@ -6,7 +6,7 @@ import Quick
 import NQueue
 import NQueueTestHelpers
 
-class QueueSpec: QuickSpec {
+final class QueueSpec: QuickSpec {
     override func spec() {
         describe("Queue") {
             var subject: Queueable!

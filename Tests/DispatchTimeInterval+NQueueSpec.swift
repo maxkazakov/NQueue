@@ -7,7 +7,7 @@ import Quick
 import NQueue
 import NQueueTestHelpers
 
-class DispatchTimeInterval_NQueueSpec: QuickSpec {
+final class DispatchTimeInterval_NQueueSpec: QuickSpec {
     override func spec() {
         describe("DispatchTimeInterval+NQueue") {
             it("should convert correctly") {
