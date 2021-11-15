@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9B8F3BA027428E39000B4702 /* NQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8F3B8727428DCB000B4702 /* NQueue.framework */; };
-		9B8F3BAC27428E77000B4702 /* Queueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BA627428E77000B4702 /* Queueable.swift */; };
-		9B8F3BAD27428E77000B4702 /* Queue+Queueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BA727428E77000B4702 /* Queue+Queueable.swift */; };
-		9B8F3BAE27428E77000B4702 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BA827428E77000B4702 /* Queue.swift */; };
-		9B8F3BAF27428E77000B4702 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BA927428E77000B4702 /* Atomic.swift */; };
-		9B8F3BB027428E77000B4702 /* DelayedQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BAA27428E77000B4702 /* DelayedQueue.swift */; };
-		9B8F3BB127428E77000B4702 /* DispatchTimeInterval+NQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BAB27428E77000B4702 /* DispatchTimeInterval+NQueue.swift */; };
-		9B8F3BBB27428E8C000B4702 /* Queue+TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BB627428E7F000B4702 /* Queue+TestHelper.swift */; };
-		9B8F3BBC27428E8C000B4702 /* FakeMutexing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BB327428E7F000B4702 /* FakeMutexing.swift */; };
-		9B8F3BBD27428E8C000B4702 /* FakeQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BB527428E7F000B4702 /* FakeQueue.swift */; };
-		9B8F3BBE27428E8C000B4702 /* DelayedQueue+TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BB427428E7F000B4702 /* DelayedQueue+TestHelper.swift */; };
-		9B8F3BC027428EA8000B4702 /* NSpry.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8F3BBF27428EA8000B4702 /* NSpry.xcframework */; };
+		9B8F3C1C274299A8000B4702 /* NQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B8F3C1A274299A8000B4702 /* NQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B8F3C29274299C1000B4702 /* NQueueTestHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B8F3C27274299C1000B4702 /* NQueueTestHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B8F3C2D274299CA000B4702 /* DelayedQueue+TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BB427428E7F000B4702 /* DelayedQueue+TestHelper.swift */; };
+		9B8F3C2E274299CA000B4702 /* FakeMutexing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BB327428E7F000B4702 /* FakeMutexing.swift */; };
+		9B8F3C2F274299CA000B4702 /* Queue+TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BB627428E7F000B4702 /* Queue+TestHelper.swift */; };
+		9B8F3C30274299CA000B4702 /* FakeQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BB527428E7F000B4702 /* FakeQueue.swift */; };
+		9B8F3C31274299CE000B4702 /* DelayedQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BAA27428E77000B4702 /* DelayedQueue.swift */; };
+		9B8F3C32274299CE000B4702 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BA927428E77000B4702 /* Atomic.swift */; };
+		9B8F3C33274299CE000B4702 /* Queueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BA627428E77000B4702 /* Queueable.swift */; };
+		9B8F3C34274299CE000B4702 /* Queue+Queueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BA727428E77000B4702 /* Queue+Queueable.swift */; };
+		9B8F3C35274299CE000B4702 /* DispatchTimeInterval+NQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BAB27428E77000B4702 /* DispatchTimeInterval+NQueue.swift */; };
+		9B8F3C36274299CE000B4702 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F3BA827428E77000B4702 /* Queue.swift */; };
+		9B8F3C3727429A05000B4702 /* NQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8F3C18274299A8000B4702 /* NQueue.framework */; };
+		9B8F3C3B27429A05000B4702 /* NSpry.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8F3BBF27428EA8000B4702 /* NSpry.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9B8F3BA227428E39000B4702 /* PBXContainerItemProxy */ = {
+		9B8F3C3927429A05000B4702 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9B8F3B7E27428DCB000B4702 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9B8F3B8627428DCB000B4702;
+			remoteGlobalIDString = 9B8F3C17274299A8000B4702;
 			remoteInfo = NQueue;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9B8F3B8727428DCB000B4702 /* NQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B8F3B9727428DFA000B4702 /* NQueueTestHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NQueueTestHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8F3BA627428E77000B4702 /* Queueable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queueable.swift; sourceTree = "<group>"; };
 		9B8F3BA727428E77000B4702 /* Queue+Queueable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Queue+Queueable.swift"; sourceTree = "<group>"; };
 		9B8F3BA827428E77000B4702 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
@@ -45,22 +45,28 @@
 		9B8F3BB527428E7F000B4702 /* FakeQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeQueue.swift; sourceTree = "<group>"; };
 		9B8F3BB627428E7F000B4702 /* Queue+TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Queue+TestHelper.swift"; sourceTree = "<group>"; };
 		9B8F3BBF27428EA8000B4702 /* NSpry.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NSpry.xcframework; path = ../Carthage/Build/NSpry.xcframework; sourceTree = "<group>"; };
+		9B8F3C18274299A8000B4702 /* NQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B8F3C1A274299A8000B4702 /* NQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NQueue.h; sourceTree = "<group>"; };
+		9B8F3C1B274299A8000B4702 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B8F3C25274299C1000B4702 /* NQueueTestHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NQueueTestHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B8F3C27274299C1000B4702 /* NQueueTestHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NQueueTestHelpers.h; sourceTree = "<group>"; };
+		9B8F3C28274299C1000B4702 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9B8F3B8427428DCB000B4702 /* Frameworks */ = {
+		9B8F3C15274299A8000B4702 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B8F3B9427428DFA000B4702 /* Frameworks */ = {
+		9B8F3C22274299C1000B4702 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B8F3BC027428EA8000B4702 /* NSpry.xcframework in Frameworks */,
-				9B8F3BA027428E39000B4702 /* NQueue.framework in Frameworks */,
+				9B8F3C3B27429A05000B4702 /* NSpry.xcframework in Frameworks */,
+				9B8F3C3727429A05000B4702 /* NQueue.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +78,8 @@
 			children = (
 				9B8F3BB227428E7F000B4702 /* TestHelpers */,
 				9B8F3BA527428E77000B4702 /* Source */,
+				9B8F3C19274299A8000B4702 /* NQueue */,
+				9B8F3C26274299C1000B4702 /* NQueueTestHelpers */,
 				9B8F3B8827428DCB000B4702 /* Products */,
 				9B8F3B9F27428E39000B4702 /* Frameworks */,
 			);
@@ -80,8 +88,8 @@
 		9B8F3B8827428DCB000B4702 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9B8F3B8727428DCB000B4702 /* NQueue.framework */,
-				9B8F3B9727428DFA000B4702 /* NQueueTestHelpers.framework */,
+				9B8F3C18274299A8000B4702 /* NQueue.framework */,
+				9B8F3C25274299C1000B4702 /* NQueueTestHelpers.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,61 +128,81 @@
 			path = ../TestHelpers;
 			sourceTree = "<group>";
 		};
+		9B8F3C19274299A8000B4702 /* NQueue */ = {
+			isa = PBXGroup;
+			children = (
+				9B8F3C1A274299A8000B4702 /* NQueue.h */,
+				9B8F3C1B274299A8000B4702 /* Info.plist */,
+			);
+			path = NQueue;
+			sourceTree = "<group>";
+		};
+		9B8F3C26274299C1000B4702 /* NQueueTestHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				9B8F3C27274299C1000B4702 /* NQueueTestHelpers.h */,
+				9B8F3C28274299C1000B4702 /* Info.plist */,
+			);
+			path = NQueueTestHelpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		9B8F3B8227428DCB000B4702 /* Headers */ = {
+		9B8F3C13274299A8000B4702 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8F3C1C274299A8000B4702 /* NQueue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B8F3B9227428DFA000B4702 /* Headers */ = {
+		9B8F3C20274299C1000B4702 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8F3C29274299C1000B4702 /* NQueueTestHelpers.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9B8F3B8627428DCB000B4702 /* NQueue */ = {
+		9B8F3C17274299A8000B4702 /* NQueue */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B8F3B8F27428DCB000B4702 /* Build configuration list for PBXNativeTarget "NQueue" */;
+			buildConfigurationList = 9B8F3C1D274299A8000B4702 /* Build configuration list for PBXNativeTarget "NQueue" */;
 			buildPhases = (
-				9B8F3B8227428DCB000B4702 /* Headers */,
-				9B8F3B8327428DCB000B4702 /* Sources */,
-				9B8F3B8427428DCB000B4702 /* Frameworks */,
-				9B8F3B8527428DCB000B4702 /* Resources */,
+				9B8F3C13274299A8000B4702 /* Headers */,
+				9B8F3C14274299A8000B4702 /* Sources */,
+				9B8F3C15274299A8000B4702 /* Frameworks */,
+				9B8F3C16274299A8000B4702 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = NQueue;
-			productName = "NQueue-Carthage";
-			productReference = 9B8F3B8727428DCB000B4702 /* NQueue.framework */;
+			productName = NQueue;
+			productReference = 9B8F3C18274299A8000B4702 /* NQueue.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9B8F3B9627428DFA000B4702 /* NQueueTestHelpers */ = {
+		9B8F3C24274299C1000B4702 /* NQueueTestHelpers */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B8F3B9C27428DFA000B4702 /* Build configuration list for PBXNativeTarget "NQueueTestHelpers" */;
+			buildConfigurationList = 9B8F3C2A274299C1000B4702 /* Build configuration list for PBXNativeTarget "NQueueTestHelpers" */;
 			buildPhases = (
-				9B8F3B9227428DFA000B4702 /* Headers */,
-				9B8F3B9327428DFA000B4702 /* Sources */,
-				9B8F3B9427428DFA000B4702 /* Frameworks */,
-				9B8F3B9527428DFA000B4702 /* Resources */,
+				9B8F3C20274299C1000B4702 /* Headers */,
+				9B8F3C21274299C1000B4702 /* Sources */,
+				9B8F3C22274299C1000B4702 /* Frameworks */,
+				9B8F3C23274299C1000B4702 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9B8F3BA327428E39000B4702 /* PBXTargetDependency */,
+				9B8F3C3A27429A05000B4702 /* PBXTargetDependency */,
 			);
 			name = NQueueTestHelpers;
 			productName = NQueueTestHelpers;
-			productReference = 9B8F3B9727428DFA000B4702 /* NQueueTestHelpers.framework */;
+			productReference = 9B8F3C25274299C1000B4702 /* NQueueTestHelpers.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -185,10 +213,10 @@
 			attributes = {
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					9B8F3B8627428DCB000B4702 = {
+					9B8F3C17274299A8000B4702 = {
 						CreatedOnToolsVersion = 12.5;
 					};
-					9B8F3B9627428DFA000B4702 = {
+					9B8F3C24274299C1000B4702 = {
 						CreatedOnToolsVersion = 12.5;
 					};
 				};
@@ -206,21 +234,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9B8F3B8627428DCB000B4702 /* NQueue */,
-				9B8F3B9627428DFA000B4702 /* NQueueTestHelpers */,
+				9B8F3C17274299A8000B4702 /* NQueue */,
+				9B8F3C24274299C1000B4702 /* NQueueTestHelpers */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9B8F3B8527428DCB000B4702 /* Resources */ = {
+		9B8F3C16274299A8000B4702 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B8F3B9527428DFA000B4702 /* Resources */ = {
+		9B8F3C23274299C1000B4702 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -230,37 +258,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9B8F3B8327428DCB000B4702 /* Sources */ = {
+		9B8F3C14274299A8000B4702 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B8F3BB127428E77000B4702 /* DispatchTimeInterval+NQueue.swift in Sources */,
-				9B8F3BAF27428E77000B4702 /* Atomic.swift in Sources */,
-				9B8F3BAC27428E77000B4702 /* Queueable.swift in Sources */,
-				9B8F3BAE27428E77000B4702 /* Queue.swift in Sources */,
-				9B8F3BB027428E77000B4702 /* DelayedQueue.swift in Sources */,
-				9B8F3BAD27428E77000B4702 /* Queue+Queueable.swift in Sources */,
+				9B8F3C32274299CE000B4702 /* Atomic.swift in Sources */,
+				9B8F3C36274299CE000B4702 /* Queue.swift in Sources */,
+				9B8F3C34274299CE000B4702 /* Queue+Queueable.swift in Sources */,
+				9B8F3C31274299CE000B4702 /* DelayedQueue.swift in Sources */,
+				9B8F3C33274299CE000B4702 /* Queueable.swift in Sources */,
+				9B8F3C35274299CE000B4702 /* DispatchTimeInterval+NQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B8F3B9327428DFA000B4702 /* Sources */ = {
+		9B8F3C21274299C1000B4702 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B8F3BBE27428E8C000B4702 /* DelayedQueue+TestHelper.swift in Sources */,
-				9B8F3BBD27428E8C000B4702 /* FakeQueue.swift in Sources */,
-				9B8F3BBB27428E8C000B4702 /* Queue+TestHelper.swift in Sources */,
-				9B8F3BBC27428E8C000B4702 /* FakeMutexing.swift in Sources */,
+				9B8F3C2D274299CA000B4702 /* DelayedQueue+TestHelper.swift in Sources */,
+				9B8F3C2E274299CA000B4702 /* FakeMutexing.swift in Sources */,
+				9B8F3C30274299CA000B4702 /* FakeQueue.swift in Sources */,
+				9B8F3C2F274299CA000B4702 /* Queue+TestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9B8F3BA327428E39000B4702 /* PBXTargetDependency */ = {
+		9B8F3C3A27429A05000B4702 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9B8F3B8627428DCB000B4702 /* NQueue */;
-			targetProxy = 9B8F3BA227428E39000B4702 /* PBXContainerItemProxy */;
+			target = 9B8F3C17274299A8000B4702 /* NQueue */;
+			targetProxy = 9B8F3C3927429A05000B4702 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -387,7 +415,7 @@
 			};
 			name = Release;
 		};
-		9B8F3B9027428DCB000B4702 /* Debug */ = {
+		9B8F3C1E274299A8000B4702 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -396,7 +424,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "NQueue-Carthage/Info.plist";
+				INFOPLIST_FILE = NQueue/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -411,7 +439,7 @@
 			};
 			name = Debug;
 		};
-		9B8F3B9127428DCB000B4702 /* Release */ = {
+		9B8F3C1F274299A8000B4702 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -420,7 +448,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "NQueue-Carthage/Info.plist";
+				INFOPLIST_FILE = NQueue/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -435,7 +463,7 @@
 			};
 			name = Release;
 		};
-		9B8F3B9D27428DFA000B4702 /* Debug */ = {
+		9B8F3C2B274299C1000B4702 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -459,7 +487,7 @@
 			};
 			name = Debug;
 		};
-		9B8F3B9E27428DFA000B4702 /* Release */ = {
+		9B8F3C2C274299C1000B4702 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -495,20 +523,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B8F3B8F27428DCB000B4702 /* Build configuration list for PBXNativeTarget "NQueue" */ = {
+		9B8F3C1D274299A8000B4702 /* Build configuration list for PBXNativeTarget "NQueue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9B8F3B9027428DCB000B4702 /* Debug */,
-				9B8F3B9127428DCB000B4702 /* Release */,
+				9B8F3C1E274299A8000B4702 /* Debug */,
+				9B8F3C1F274299A8000B4702 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B8F3B9C27428DFA000B4702 /* Build configuration list for PBXNativeTarget "NQueueTestHelpers" */ = {
+		9B8F3C2A274299C1000B4702 /* Build configuration list for PBXNativeTarget "NQueueTestHelpers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9B8F3B9D27428DFA000B4702 /* Debug */,
-				9B8F3B9E27428DFA000B4702 /* Release */,
+				9B8F3C2B274299C1000B4702 /* Debug */,
+				9B8F3C2C274299C1000B4702 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
